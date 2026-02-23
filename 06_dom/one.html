@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #ffff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div>
+        <h1 id="title" class="heading">DOM Learning on chai aur code</h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+
+        <ul>
+            <li class="list-item">One</li>
+            <li class="list-item">Two</li>
+            <li class="list-item">Three</li>
+            <li class="list-item">Four</li>
+            <li class="list-item">Five</li>
+        </ul>
+    </div>
+
+    <script>
+        const heading = document.getElementById('title')
+        console.log(heading);
+        console.log(heading.id);
+        console.log(heading.classList);
+        console.log(heading.className);
+        console.log(heading.getAttribute('class'));
+        console.log(heading.setAttribute('class', 'test'));
+        title.style.backgroundColor = 'green'
+        heading.style.padding = '16px'
+
+        console.log(title);
+        console.log(title.textContent);
+        console.log(title.innerHTML);
+        console.log(title.innerText);
+
+        const liList =  document.getElementsByClassName('list-item')
+
+        console.log(liList);
+
+        ConvertedliList = Array.from(liList)
+
+        ConvertedliList.forEach(function(li){
+            console.log(li);
+            li.style.color = 'red'
+        })
+        
+    </script>
+</body>
+</html>

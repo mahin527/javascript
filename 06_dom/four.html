@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Practice</title>
+    <style>
+        .bg-black {
+            background-color: #212121;
+            color: #ffff;
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+
+
+    <script>
+        function addLanguage(languageName) {
+            const li = document.createElement('li')
+            li.innerHTML = `${languageName}`
+            document.querySelector('.language').appendChild(li)
+        }
+
+        addLanguage('Python')
+        addLanguage('Swift')
+
+        function addOptiLang(languageName) {
+            const li = document.createElement('li')
+            li.appendChild(document.createTextNode(languageName))
+            document.querySelector('.language').appendChild(li)
+        }
+
+        addOptiLang('Golang')
+        addOptiLang('Java')
+
+        // Edit
+        const secondLang = document.querySelector('li:nth-child(2)')
+        // secondLang.innerHTML = 'Changed!'
+        const newLi = document.createElement('li')
+        newLi.textContent = 'Changed with optimaze!'
+        secondLang.replaceWith(newLi)
+
+        // with outerHTML
+        const firstLang = document.querySelector('li:first-child')
+        firstLang.outerHTML = '<li>Changed with outerHTML</li>'
+
+        // Remove
+        const lastLang = document.querySelector('li:last-child')
+        lastLang.remove()
+    </script>
+</body>
+
+</html>
