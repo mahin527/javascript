@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<body style="background-color: #414141; color: aliceblue;">
+
+    <body>
+        <h1>The Best History of Nation</h1>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </body>
+    <script>
+
+        // 1. Assign Variable in Global Scope
+        let intervalId;
+
+        const sayDate = function (str) {
+            console.log(str, Date.now());
+        };
+
+        // work of start button
+        document.getElementById('start').addEventListener('click', function () {
+            if (!intervalId) {
+                intervalId = setInterval(sayDate, 1000, 'Hello');
+                console.log("Process Started...");
+            }
+        });
+
+        // work of stop button
+        document.getElementById('stop').addEventListener('click', function () {
+            // stop interval
+            clearInterval(intervalId);
+            // clear variable
+            intervalId = null;
+            console.log('Stopped!');
+        });
+    </script>
+
+</html>
